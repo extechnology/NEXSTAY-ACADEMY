@@ -211,7 +211,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="space-y-5 text-xs sm:text-sm">
+                <div className="space-y-8 text-xs sm:text-sm">
                   {/* Campus Address */}
                   <div className="flex items-start gap-4">
                     <div className="p-2.5 rounded-xl bg-white/10 text-[#e5be58] flex-shrink-0 mt-0.5">
