@@ -1,10 +1,15 @@
-"use client";
-
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import { ShieldCheck } from "lucide-react";
+import { Briefcase, Globe2, GraduationCap, ShieldCheck } from "lucide-react";
+import LogoLoop from "../LogoLoop";
+
+/**
+ * NOTE: This assumes `lucide-react` is already a project dependency
+ * (it's an extremely common pairing with Tailwind + Framer Motion stacks).
+ * If it isn't installed yet: `npm i lucide-react`
+ */
 
 const IMAGE_URL =
-    "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1600&auto=format&fit=crop";
+    "https://plus.unsplash.com/premium_photo-1713296255442-e9338f42aad8?fm=jpg&q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dW5pdmVyc2l0eSUyMHN0dWRlbnR8ZW58MHx8MHx8fDA%3D";
 
 /* =========================================================
    HIRING PARTNERS
@@ -12,55 +17,35 @@ const IMAGE_URL =
 ========================================================= */
 
 const PARTNERS = [
-    {
-        name: "Taj",
-        image:
-            "https://img.magnific.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg?semt=ais_hybrid&w=740&q=80",
-    },
-    {
-        name: "Marriott",
-        image:
-            "https://placehold.co/220x90/0d1a2a/C6A15B?text=MARRIOTT",
-    },
-    {
-        name: "Hilton",
-        image:
-            "https://placehold.co/220x90/0d1a2a/C6A15B?text=HILTON",
-    },
-    {
-        name: "Hyatt",
-        image:
-            "https://placehold.co/220x90/0d1a2a/C6A15B?text=HYATT",
-    },
-    {
-        name: "Accor",
-        image:
-            "https://placehold.co/220x90/0d1a2a/C6A15B?text=ACCOR",
-    },
-    {
-        name: "Oberoi",
-        image:
-            "https://placehold.co/220x90/0d1a2a/C6A15B?text=OBEROI",
-    },
+    { title: "Taj", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCfCi3t_7AIllxaLn3mhgRYvKsEpQOhgTv92fdCun0tUshf7ynNc1hUOg&s=10" },
+    { title: "Marriott", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCfCi3t_7AIllxaLn3mhgRYvKsEpQOhgTv92fdCun0tUshf7ynNc1hUOg&s=10" },
+    { title: "Hilton", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCfCi3t_7AIllxaLn3mhgRYvKsEpQOhgTv92fdCun0tUshf7ynNc1hUOg&s=10" },
+    { title: "Hyatt", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCfCi3t_7AIllxaLn3mhgRYvKsEpQOhgTv92fdCun0tUshf7ynNc1hUOg&s=10" },
+    { title: "Accor", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCfCi3t_7AIllxaLn3mhgRYvKsEpQOhgTv92fdCun0tUshf7ynNc1hUOg&s=10" },
+    { title: "Oberoi", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCfCi3t_7AIllxaLn3mhgRYvKsEpQOhgTv92fdCun0tUshf7ynNc1hUOg&s=10" },
+    { title: "Radisson", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCfCi3t_7AIllxaLn3mhgRYvKsEpQOhgTv92fdCun0tUshf7ynNc1hUOg&s=10" },
+    { title: "ITC Hotels", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCfCi3t_7AIllxaLn3mhgRYvKsEpQOhgTv92fdCun0tUshf7ynNc1hUOg&s=10" },
 ];
 
+/* =========================================================
+   ACCREDITATIONS
+========================================================= */
+
 const ACCREDITATIONS = [
-    {
-        name: "Accreditation 01",
-        mark: "01",
-    },
-    {
-        name: "Accreditation 02",
-        mark: "02",
-    },
-    {
-        name: "Accreditation 03",
-        mark: "03",
-    },
-    {
-        name: "Accreditation 04",
-        mark: "04",
-    },
+    { title: "Accreditation 01", src: "https://affiliatewp.com/wp-content/uploads/2023/10/affiliatewp-featured-image-1.png" },
+    { title: "Accreditation 02", src: "https://affiliatewp.com/wp-content/uploads/2023/10/affiliatewp-featured-image-1.png" },
+    { title: "Accreditation 03", src: "https://affiliatewp.com/wp-content/uploads/2023/10/affiliatewp-featured-image-1.png" },
+    { title: "Accreditation 04", src: "https://affiliatewp.com/wp-content/uploads/2023/10/affiliatewp-featured-image-1.png" },
+];
+
+/* =========================================================
+   FEATURE ICONS ROW
+========================================================= */
+
+const FEATURES = [
+    { Icon: Briefcase, lines: ["Top Hiring", "Partners"] },
+    { Icon: Globe2, lines: ["Global Career", "Opportunities"] },
+    { Icon: ShieldCheck, lines: ["Dedicated", "Placement Support"] },
 ];
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -73,322 +58,205 @@ export default function PlacementsStrip() {
     ========================================================= */
 
     const imageVariants: Variants = {
-        hidden: {
-            opacity: 0,
-            scale: reduceMotion ? 1 : 1.08,
-        },
-
-        show: {
-            opacity: 1,
-            scale: 1,
-
-            transition: {
-                duration: 2,
-                ease: EASE,
-            },
-        },
+        hidden: { opacity: 0, scale: reduceMotion ? 1 : 1.08 },
+        show: { opacity: 1, scale: 1, transition: { duration: 1.8, ease: EASE } },
     };
 
     const contentVariants: Variants = {
-        hidden: {
-            opacity: 0,
-            x: reduceMotion ? 0 : 35,
-        },
-
+        hidden: { opacity: 0, x: reduceMotion ? 0 : 30 },
         show: {
             opacity: 1,
             x: 0,
-
             transition: {
-                duration: 1.4,
+                duration: 1.3,
                 ease: EASE,
-                staggerChildren: reduceMotion ? 0 : 0.12,
+                staggerChildren: reduceMotion ? 0 : 0.1,
                 delayChildren: 0.15,
             },
         },
     };
 
     const itemVariants: Variants = {
-        hidden: {
-            opacity: 0,
-            y: reduceMotion ? 0 : 18,
-        },
-
-        show: {
-            opacity: 1,
-            y: 0,
-
-            transition: {
-                duration: 0.9,
-                ease: EASE,
-            },
-        },
-    };
-
-    const logoVariants: Variants = {
-        hidden: {
-            opacity: 0,
-            y: reduceMotion ? 0 : 12,
-        },
-
-        show: {
-            opacity: 1,
-            y: 0,
-
-            transition: {
-                duration: 0.75,
-                ease: EASE,
-            },
-        },
+        hidden: { opacity: 0, y: reduceMotion ? 0 : 16 },
+        show: { opacity: 1, y: 0, transition: { duration: 1.05, ease: EASE } },
     };
 
     return (
         <section className="relative w-full overflow-hidden bg-[#071322]">
             <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap');
+                @import url('https://fonts.googleapis.com/css2?family=Allura&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap');
 
-                .font-display {
-                    font-family: 'Fraunces', ui-serif, Georgia, serif;
+                .font-display { font-family: 'Fraunces', ui-serif, Georgia, serif; }
+                .font-body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+                .font-script { font-family: 'Allura', cursive; }
+
+                /* Diagonal chevron cut — only active at lg+ where the two
+                   columns sit side by side. Below lg the image stays a
+                   plain full-bleed rectangle. */
+                .diag-frame,
+                .diag-image {
+                    clip-path: none;
                 }
-
-                .font-body {
-                    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+                @media (min-width: 1024px) {
+                    .diag-frame {
+                        clip-path: polygon(0 0, 97.5% 0, 90% 50%, 97.5% 100%, 0 100%);
+                        transition: clip-path 0.4s ease;
+                    }
+                    .diag-image {
+                        clip-path: polygon(0 0, 96.3% 0, 88.8% 50%, 96.3% 100%, 0 100%);
+                        transition: clip-path 0.4s ease;
+                    }
                 }
             `}</style>
 
-            {/* =========================================================
-                MAIN LAYOUT
-                Desktop: 50% Image / 50% Content
-                Mobile: Image / Content
-            ========================================================= */}
+            <div className="grid w-full grid-cols-1 lg:grid-cols-[0.9fr_1fr]">
 
-            <div className="grid min-h-[680px] w-full grid-cols-1 lg:grid-cols-2">
+                {/* ===================================================== LEFT — IMAGE ===================================================== */}
+                <div className="relative min-h-[280px] overflow-hidden sm:min-h-[360px] lg:min-h-[620px]">
 
-                {/* =====================================================
-                    LEFT — IMAGE
-                ===================================================== */}
-
-                <div className="relative min-h-[430px] overflow-hidden sm:min-h-[520px] lg:min-h-[680px]">
+                    {/* gold frame layer, only visible where the inner image is inset (the diagonal edge) */}
+                    <div className="diag-frame absolute inset-0 bg-gradient-to-b from-[#E7C77E] via-[#C6A15B] to-[#8f7238]" />
 
                     <motion.img
                         src={IMAGE_URL}
-                        alt="Hospitality graduate placement"
+                        alt="Hospitality graduates celebrating placement success"
                         variants={imageVariants}
                         initial="hidden"
                         whileInView="show"
-                        viewport={{
-                            once: true,
-                            amount: 0.25,
-                        }}
-                        className="absolute inset-0 h-full w-full object-cover"
+                        viewport={{ once: true, amount: 0.25 }}
+                        className="diag-image absolute inset-0 h-full w-full object-cover"
                     />
 
-                    {/* Image overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-[#071322]/80 lg:to-[#071322]" />
-
                     <div className="absolute inset-0 bg-gradient-to-t from-[#071322]/70 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#071322]/10 lg:to-[#071322]/25" />
 
-                    {/* Bottom image label */}
                     <motion.div
-                        initial={{
-                            opacity: 0,
-                            y: reduceMotion ? 0 : 15,
-                        }}
-                        whileInView={{
-                            opacity: 1,
-                            y: 0,
-                        }}
-                        viewport={{
-                            once: true,
-                        }}
-                        transition={{
-                            duration: 1,
-                            delay: 0.7,
-                            ease: EASE,
-                        }}
-                        className="absolute bottom-7 left-7 sm:bottom-10 sm:left-10"
+                        initial={{ opacity: 0, y: reduceMotion ? 0 : -12 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: 0.4, ease: EASE }}
+                        className="absolute left-5 top-5 sm:left-8 sm:top-7 lg:left-10 lg:top-9"
                     >
-                        <div className="flex items-center gap-3">
-                            <span className="h-px w-10 bg-[#C6A15B]" />
-
-                            <span className="font-body text-[10px] font-medium uppercase tracking-[0.28em] text-white/70">
-                                Global Hospitality Careers
-                            </span>
-                        </div>
+                        <p
+                            className="font-script leading-[1.05] text-[#F1DFAE]"
+                            style={{ fontSize: "clamp(22px, 4.2vw, 38px)" }}
+                        >
+                            Your Future
+                        </p>
+                        <p
+                            className="font-script leading-[1.05] text-[#F1DFAE]"
+                            style={{ fontSize: "clamp(22px, 4.2vw, 38px)" }}
+                        >
+                            Our Commitment
+                        </p>
+                        <span className="mt-1.5 block h-px w-24 bg-[#C6A15B]/70 sm:w-28" />
                     </motion.div>
                 </div>
 
-                {/* =====================================================
-                    RIGHT — CONTENT
-                ===================================================== */}
+                {/* ===================================================== RIGHT — CONTENT ===================================================== */}
+                <div className="relative flex min-h-[420px] items-center overflow-hidden bg-[#071322] lg:min-h-[640px]">
 
-                <div className="relative flex min-h-[620px] items-center overflow-hidden bg-[#071322] lg:min-h-[680px]">
-
-                    {/* =================================================
-                        DECORATIVE BACKGROUND
-                    ================================================= */}
-
-                    <div
-                        aria-hidden
-                        className="pointer-events-none absolute -right-32 top-1/2 h-[460px] w-[460px] -translate-y-1/2 rounded-full border border-[#C6A15B]/[0.055]"
-                    />
-
-                    <div
-                        aria-hidden
-                        className="pointer-events-none absolute -right-8 top-1/2 h-[330px] w-[330px] -translate-y-1/2 rounded-full border border-[#C6A15B]/[0.035]"
-                    />
-
-                    <div
-                        aria-hidden
-                        className="pointer-events-none absolute -left-32 bottom-[-120px] h-[300px] w-[300px] rounded-full bg-[#C6A15B]/[0.025] blur-3xl"
-                    />
-
-                    {/* =================================================
-                        CONTENT WRAPPER
-                    ================================================= */}
+                    <div aria-hidden className="pointer-events-none absolute -right-32 top-1/2 h-[460px] w-[460px] -translate-y-1/2 rounded-full border border-[#C6A15B]/[0.055]" />
+                    <div aria-hidden className="pointer-events-none absolute -right-8 top-1/2 h-[330px] w-[330px] -translate-y-1/2 rounded-full border border-[#C6A15B]/[0.035]" />
+                    <div aria-hidden className="pointer-events-none absolute -left-32 bottom-[-120px] h-[300px] w-[300px] rounded-full bg-[#C6A15B]/[0.025] blur-3xl" />
 
                     <motion.div
                         variants={contentVariants}
                         initial="hidden"
                         whileInView="show"
-                        viewport={{
-                            once: true,
-                            amount: 0.2,
-                        }}
-                        className="relative z-10 w-full px-6 py-14 sm:px-10 sm:py-16 md:px-14 lg:px-10 lg:py-16 xl:px-16 2xl:px-20"
+                        viewport={{ once: true, amount: 0.2 }}
+                        className="relative z-10 w-full px-5 py-10 sm:px-8 sm:py-12 md:px-10 lg:px-10 lg:py-10 xl:px-10 xl:py-12"
                     >
-
-                        {/* =================================================
-                            PLACEMENT QUOTE
-                        ================================================= */}
-
+                        {/* BADGE */}
                         <motion.div
                             variants={itemVariants}
-                            className="max-w-[650px]"
+                            className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#C6A15B]/40 bg-white/[0.04] px-3.5 py-1.5 sm:mb-6"
                         >
-                            {/* Quote mark */}
-                            <span
-                                aria-hidden
-                                className="font-display mb-4 block text-[64px] leading-[0.35] text-[#C6A15B]/20 sm:text-[72px]"
-                            >
-                                “
+                            <GraduationCap className="h-3.5 w-3.5 text-[#C6A15B]" strokeWidth={2} />
+                            <span className="font-body text-[10px] font-semibold uppercase tracking-[0.22em] text-[#D9C08C] sm:text-[11px]">
+                                Placement Assistance
                             </span>
+                        </motion.div>
 
-                            <h2 className="font-display text-[1.7rem] font-medium leading-[1.18] tracking-[-0.025em] text-white sm:text-[2rem] md:text-[2.25rem] lg:text-[2rem] xl:text-[2.35rem]">
-                                <span className="text-[#C6A15B]">
-                                    100% Placement Assistance
-                                </span>
-
-                                <span className="text-white/85">
-                                    {" "}
-                                    — India &amp; International Postings.
-                                </span>
+                        {/* HEADLINE */}
+                        <motion.div variants={itemVariants} className="max-w-[660px]">
+                            <h2
+                                className="font-display font-semibold leading-[1.18] tracking-[-0.02em] text-white"
+                                style={{ fontSize: "clamp(1.65rem, 1.15rem + 1.9vw, 2.5rem)" }}
+                            >
+                                <span className="text-[#C6A15B]">100%</span> Placement Assistance —{" "}
+                                <span className="text-white/90">India &amp; International Postings.</span>
                             </h2>
                         </motion.div>
 
-                        {/* =================================================
-                            HIRING PARTNERS
-                        ================================================= */}
-
+                        {/* FEATURES ROW */}
                         <motion.div
                             variants={itemVariants}
-                            className="mt-10 sm:mt-12"
+                            className="mt-6 grid grid-cols-3 divide-x divide-white/[0.08] sm:mt-8"
                         >
-                            {/* Section title */}
-                            <div className="mb-4 flex items-center gap-3">
-                                <span className="h-px w-8 bg-[#C6A15B]/60" />
+                            {FEATURES.map(({ Icon, lines }) => (
+                                <div key={lines.join(" ")} className="flex items-center gap-2 pl-0 pr-2 first:pl-0 sm:gap-2.5 [&:not(:first-child)]:pl-3 sm:[&:not(:first-child)]:pl-4">
+                                    <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full border border-[#C6A15B]/50 sm:h-12 sm:w-12">
+                                        <Icon className="h-3.5 w-3.5 text-[#C6A15B] sm:h-5 sm:w-5" strokeWidth={1.75} />
+                                    </span>
+                                    <span className="font-body text-[11px] font-medium leading-[1.35] text-white/70 sm:text-[12.5px]">
+                                        {lines[0]}
+                                        <br />
+                                        {lines[1]}
+                                    </span>
+                                </div>
+                            ))}
+                        </motion.div>
 
-                                <span className="font-body text-[9px] font-semibold uppercase tracking-[0.3em] text-white/40">
-                                    Hiring Partners
+                        {/* HIRING PARTNERS — LOGO LOOP */}
+                        <motion.div variants={itemVariants} className="mt-7 sm:mt-12">
+                            <div className="mb-3 flex items-center gap-2.5 sm:gap-3">
+                                <span className="h-px w-6 sm:w-8 bg-[#C6A15B]/60" />
+                                <span className="font-body text-[11.5px] font-semibold uppercase tracking-[0.25em] text-white/45 sm:text-[13px] sm:tracking-[0.3em]">
+                                    Our Hiring Partners
                                 </span>
                             </div>
 
-                            {/* Logo grid */}
-                            <motion.div
-                                variants={contentVariants}
-                                className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3"
-                            >
-                                {PARTNERS.map((partner) => (
-                                    <motion.div
-                                        key={partner.name}
-                                        variants={logoVariants}
-                                        whileHover={
-                                            reduceMotion
-                                                ? undefined
-                                                : {
-                                                    y: -4,
-                                                    borderColor:
-                                                        "rgba(198,161,91,0.45)",
-                                                    backgroundColor:
-                                                        "rgba(255,255,255,0.045)",
-                                                }
-                                        }
-                                        transition={{
-                                            duration: 0.4,
-                                            ease: EASE,
-                                        }}
-                                        className="group flex h-[62px] items-center justify-center overflow-hidden rounded-sm border border-white/[0.08] bg-white/[0.025] px-3 transition-all duration-500 sm:h-[68px]"
-                                    >
-                                        <img
-                                            src={partner.image}
-                                            alt={`${partner.name} logo`}
-                                            className="h-auto max-h-[38px] w-auto max-w-[130px] object-contain opacity-55 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 sm:max-w-[140px]"
-                                        />
-                                    </motion.div>
-                                ))}
-                            </motion.div>
+                            <div className="py-2 transition-opacity duration-300 hover:opacity-90">
+                                <LogoLoop
+                                    logos={PARTNERS}
+                                    speed={34}
+                                    hoverSpeed={8}
+                                    direction="left"
+                                    logoHeight={50}
+                                    gap={30}
+                                    scaleOnHover
+                                    fadeOut
+                                    fadeOutColor="#071322"
+                                    ariaLabel="Hiring partner logos"
+                                />
+                            </div>
                         </motion.div>
 
-                        {/* =================================================
-                            AFFILIATIONS
-                        ================================================= */}
+                        {/* AFFILIATIONS — LOGO LOOP */}
+                        <motion.div variants={itemVariants} className="mt-6 sm:mt-12">
+                            <div className="mb-3.5 flex items-center gap-3 sm:gap-4">
+                                <span className="h-px flex-1 bg-white/[0.09]" />
+                                <span className="font-body whitespace-nowrap text-[12px] font-medium text-white/55 sm:text-[13.5px]">
+                                    Proudly Affiliated &amp; Recognized.
+                                </span>
+                                <span className="h-px flex-1 bg-white/[0.09]" />
+                            </div>
 
-                        <motion.div
-                            variants={itemVariants}
-                            className="mt-8 border-t border-white/[0.07] pt-6 sm:mt-9 sm:pt-7"
-                        >
-                            <p className="mb-4 font-body text-[9px] font-semibold uppercase tracking-[0.28em] text-white/40">
-                                Proudly Affiliated &amp; Recognized.
-                            </p>
-
-                            <motion.div
-                                variants={contentVariants}
-                                className="flex flex-wrap items-center gap-2.5 sm:gap-3"
-                            >
-                                {ACCREDITATIONS.map((item) => (
-                                    <motion.div
-                                        key={item.name}
-                                        variants={logoVariants}
-                                        whileHover={
-                                            reduceMotion
-                                                ? undefined
-                                                : {
-                                                    y: -3,
-                                                    borderColor:
-                                                        "rgba(198,161,91,0.3)",
-                                                }
-                                        }
-                                        transition={{
-                                            duration: 0.4,
-                                            ease: EASE,
-                                        }}
-                                        className="group flex h-11 min-w-[68px] flex-1 items-center justify-center rounded-sm border border-white/[0.07] bg-white/[0.02] px-3 transition-colors duration-500 sm:flex-none sm:min-w-[76px]"
-                                    >
-                                        <div className="flex items-center gap-2">
-                                            <ShieldCheck
-                                                className="h-3.5 w-3.5 text-[#C6A15B]/45 transition-colors duration-500 group-hover:text-[#C6A15B]"
-                                                strokeWidth={1.5}
-                                            />
-
-                                            <span className="font-body text-[9px] font-semibold tracking-[0.14em] text-white/35 transition-colors duration-500 group-hover:text-white/60">
-                                                {item.mark}
-                                            </span>
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </motion.div>
+                            <div className="py-1.5 transition-opacity duration-300 hover:opacity-90">
+                                <LogoLoop
+                                    logos={ACCREDITATIONS}
+                                    speed={24}
+                                    hoverSpeed={8}
+                                    direction="right"
+                                    logoHeight={50}
+                                    gap={40}
+                                    fadeOut
+                                    fadeOutColor="#071322"
+                                    ariaLabel="Accreditation marks"
+                                />
+                            </div>
                         </motion.div>
-
                     </motion.div>
                 </div>
             </div>

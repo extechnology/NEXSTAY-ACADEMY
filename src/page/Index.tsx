@@ -3,7 +3,8 @@ import HomeAboutSection from '@/components/home/HomeAboutSection';
 import ProgramSnapshotSection from '@/components/home/Programsnapshotsection';
 import EarnWhileYouLearnSection from '@/components/home/Earnwhileyoulearnsection';
 import WhyChooseNAHM from '@/components/home/WhyUs';
-
+import CTASection from '@/components/home/Cta';
+import PlacementsStrip from '@/components/home/PlacementStrip';
 
 
 
@@ -23,7 +24,10 @@ export default function Home() {
 
       <WhyChooseNAHM />
 
-      {/* <PlacementsStrip /> */}
+      <PlacementsStrip />
+
+
+      <CTASection />
 
     </div>
 
