@@ -80,14 +80,14 @@ const PHASES = [
 
 const ProgramSnapshotSection: React.FC = () => {
     return (
-        <section className="relative -mt-16 overflow-hidden bg-white pb-20 pt-16 sm:-mt-24 sm:pb-28 sm:pt-24 lg:-mt-44 lg:pt-52">
+        <section className="relative -mt-16 overflow-hidden bg-white pb-20 pt-16 sm:-mt-24 sm:pb-28 sm:pt-24 lg:-mt-52 lg:pt-60">
             {/* Diagonal brand-navy background shape matching the homepage split */}
             <div
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0"
                 style={{
                     background: "#071322",
-                    clipPath: "polygon(0 0, 72% 0, 48% 100%, 0 100%)",
+                    clipPath: "polygon(0 0, 72% 0, 44% 100%, 0 100%)",
                 }}
             />
 
