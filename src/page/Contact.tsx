@@ -304,7 +304,7 @@ export default function Contact() {
             </div>
 
             {/* Harmonized Tour & Accreditation Combined Card */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-white border border-slate-200 shadow-md space-y-4">
+            {/* <div className="p-6 sm:p-7 rounded-3xl bg-white border border-slate-200 shadow-md space-y-4">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-2xl bg-[#c59b27]/15 text-[#0a192f] flex-shrink-0">
                   <Compass className="w-6 h-6 text-[#8b1525]" />
@@ -324,7 +324,7 @@ export default function Contact() {
                 <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                 <span>Govt. Recognized Academy • ISO 9001:2015 Benchmark</span>
               </div>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* RIGHT COLUMN: REFINED HIGH-VISIBILITY ENQUIRY FORM (7 cols) */}
