@@ -16,13 +16,18 @@ export default function Home() {
 
       <HeroSection />
 
+
       <HomeAboutSection />
+
 
       <ProgramSnapshotSection />
 
+
       <EarnWhileYouLearnSection />
 
+
       <WhyChooseNAHM />
+
 
       <PlacementsStrip />
 
