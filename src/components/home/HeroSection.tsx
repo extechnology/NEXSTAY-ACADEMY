@@ -105,7 +105,7 @@ export const HeroSection: React.FC = () => {
             className="mt-6 sm:mt-8 max-w-sm sm:max-w-md"
           >
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
-              The Nexstay Academy of Hotel Management is where passion comes alive. Learn, Earn & Get Placed with guaranteed 5-star international recruitment.
+              A 15-month Diploma in Hotel Management from Nexstay Academy, backed by Nexstay Hotels &amp; Resorts, with on-the-job training, a monthly stipend, and 100% placement assistance in India and abroad.
             </p>
           </motion.div>
         </div>
@@ -136,10 +136,10 @@ export const HeroSection: React.FC = () => {
           {/* Col 2 */}
           <div className="flex flex-col whitespace-nowrap">
             <span className="font-extrabold uppercase tracking-wider text-[#0a192f] text-[11px]">
-              501 Grand Boulevard
+              Parayancheri, Calicut
             </span>
             <span className="text-slate-500 font-medium text-[11px] mt-0.5">
-              Luxury Hospitality Hub
+              6th Floor, V-Zone Building
             </span>
           </div>
 

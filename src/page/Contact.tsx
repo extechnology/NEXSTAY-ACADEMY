@@ -222,9 +222,9 @@ export default function Contact() {
                         Campus Address
                       </span>
                       <span className="text-slate-300 leading-relaxed block">
-                        501 Grand Boulevard, Luxury Hospitality Hub,
+                        6th Floor, V-Zone Building, Parayancheri,
                         <br />
-                        Central District, Academic Campus
+                        Calicut, Pin – 673016
                       </span>
                     </div>
                   </div>
@@ -238,11 +238,8 @@ export default function Contact() {
                       <span className="font-bold text-white uppercase text-[11px] tracking-wider block mb-0.5">
                         Admissions Helplines
                       </span>
-                      <a href="tel:+919876543210" className="text-slate-300 hover:text-[#e5be58] transition-colors block">
-                        +91 (0) 98765 43210
-                      </a>
-                      <a href="tel:+919876543211" className="text-slate-300 hover:text-[#e5be58] transition-colors block">
-                        +91 (0) 98765 43211
+                      <a href="tel:+917736797333" className="text-slate-300 hover:text-[#e5be58] transition-colors block">
+                        +91 77367 97333
                       </a>
                     </div>
                   </div>
@@ -257,12 +254,12 @@ export default function Contact() {
                         WhatsApp Counseling
                       </span>
                       <a
-                        href="https://wa.me/919876543210"
+                        href="https://wa.me/917736797333"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-semibold transition-colors"
                       >
-                        <span>+91 98765 43210 (Chat Online)</span>
+                        <span>+91 77367 97333 (Chat Online)</span>
                         <ExternalLink className="w-3 h-3" />
                       </a>
                     </div>
@@ -278,10 +275,10 @@ export default function Contact() {
                         Official Inquiries Email
                       </span>
                       <a
-                        href="mailto:admissions@nexstayacademy.com"
+                        href="mailto:support@nahm.in"
                         className="text-slate-300 hover:text-[#e5be58] transition-colors break-all block"
                       >
-                        admissions@nexstayacademy.com
+                        support@nahm.in
                       </a>
                     </div>
                   </div>
@@ -295,7 +292,8 @@ export default function Contact() {
                       <span className="font-bold text-white uppercase text-[11px] tracking-wider block mb-0.5">
                         Office & Visiting Hours
                       </span>
-                      <span className="text-slate-300 block">Monday – Saturday: 9:00 AM – 6:00 PM IST</span>
+                      <span className="text-slate-300 block">Mon – Fri: 9:00 AM – 6:00 PM</span>
+                      <span className="text-slate-300 block mt-0.5">Sat: 9:00 AM – 3:00 PM</span>
                       <span className="text-slate-400 text-[11px] block mt-0.5">
                         Sunday: Closed / Guided Tours By Prior Appointment
                       </span>
@@ -542,12 +540,12 @@ export default function Contact() {
                 Nexstay Academy Campus Location Map
               </h3>
               <p className="text-xs text-slate-300 mt-1">
-                501 Grand Boulevard, Luxury Hospitality Hub, Central Campus
+                6th Floor, V-Zone Building, Parayancheri, Calicut, Pin – 673016
               </p>
             </div>
 
             <a
-              href="https://maps.google.com"
+              href="https://maps.google.com/?q=V-Zone+Building+Parayancheri+Calicut+673016"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#c59b27] hover:bg-[#e5be58] text-[#0a192f] font-bold text-xs uppercase tracking-wider transition-all flex-shrink-0"
@@ -561,7 +559,7 @@ export default function Contact() {
           <div className="w-full h-[380px] sm:h-[450px] relative bg-slate-100">
             <iframe
               title="Nexstay Academy Campus Location Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0016462725515!2d77.5945627!3d12.9715987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+              src="https://maps.google.com/maps?q=Parayancheri%20Calicut%20Kerala%20673016&t=&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}

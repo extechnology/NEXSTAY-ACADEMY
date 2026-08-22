@@ -17,9 +17,9 @@ const CAMPUS_IMAGE =
 
 const HIGHLIGHTS = [
     { icon: GraduationCap, label: '15-Month Diploma Program' },
-    { icon: Briefcase, label: 'Paid On-the-Job Training' },
+    { icon: Briefcase, label: 'IET & OJT with Stipend' },
     { icon: Award, label: '100% Placement Assistance' },
-    { icon: Shirt, label: 'Free Uniform, Kit & Spoken English Classes' },
+    { icon: Shirt, label: 'Free Uniform Kit' },
     { icon: Building2, label: 'Backed by Nexstay Hotels & Resorts' },
     { icon: Users, label: '35 Students Per Batch — Personal Attention' },
 ];
@@ -179,13 +179,15 @@ export const HomeAboutSection: React.FC = () => {
                             </motion.div>
 
                             <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
-                                <Link
-                                    to="/brochure"
+                                <a
+                                    href="https://wa.me/917736797333?text=Hi%20Nexstay%20Academy,%20please%20send%20me%20the%20official%20Diploma%20in%20Hotel%20Management%20brochure."
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="inline-flex items-center gap-2 sm:gap-2.5 px-5 sm:px-7 py-3 sm:py-3.5 rounded-full border border-white/25 text-white font-['Outfit'] font-semibold text-[11px] sm:text-sm tracking-wider uppercase transition-colors hover:border-[#c59b27] hover:text-[#e5be58]"
                                 >
-                                    <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                                    <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#e5be58]" />
                                     <span>Download Brochure</span>
-                                </Link>
+                                </a>
                             </motion.div>
                         </motion.div>
                     </div>

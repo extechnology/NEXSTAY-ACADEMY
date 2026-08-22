@@ -33,36 +33,36 @@ type Feature = {
 const FEATURES: Feature[] = [
     {
         icon: Building2,
-        title: "Industry-integrated training",
+        title: "Industry-Integrated Training",
         description:
-            "Train inside live Nexstay Hotels & Resorts properties — not just a classroom.",
+            "Train inside live Nexstay Hotels & Resorts properties, not just a classroom.",
     },
     {
         icon: IndianRupee,
-        title: "Get paid to learn",
+        title: "Get Paid to Learn",
         description:
-            "A stipend begins after 300 classroom hours, alongside free food and accommodation.",
+            "Stipend starts after 100 days of theoretical sessions, alongside free food and accommodation.",
     },
     {
         icon: Briefcase,
-        title: "Placement-first approach",
+        title: "Placement-First Approach",
         description: "100% placement assistance across India and internationally.",
     },
     {
         icon: PackageCheck,
-        title: "Complete support",
+        title: "Complete Support",
         description:
-            "Free uniforms, practical kits and master record books, plus help securing education loans.",
+            "Free uniform kit and help securing education loans.",
     },
     {
         icon: Sparkles,
-        title: "Well-rounded development",
-        description: "Free spoken English classes and personality development workshops.",
+        title: "Well-Rounded Development",
+        description: "Placement training sessions and personality development workshops.",
     },
     {
         icon: Users2,
-        title: "Small batches",
-        description: "Only 35 students per batch, for hands-on, individual mentoring.",
+        title: "Small Batches",
+        description: "Only 35 students per batch for hands-on, individual mentoring.",
     },
 ];
 

@@ -10,6 +10,7 @@ const Programs = lazy(() => import("@/page/Programs"));
 const Admission = lazy(() => import("@/page/Admission"));
 const Placement = lazy(() => import("@/page/Placement"));
 const Contact = lazy(() => import("@/page/Contact"));
+const EarnWhileYouLearn = lazy(() => import("@/page/EarnWhileYouLearn"));
 
 // Luxury Page Loading Skeleton
 function LoadingFallback() {
@@ -46,6 +47,7 @@ function App() {
               <Route path="/admission" element={<Admission />} />
               <Route path="/placement" element={<Placement />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/earn-while-you-learn" element={<EarnWhileYouLearn />} />
               <Route path="*" element={<Home />} />
             </Route>
           </Routes>

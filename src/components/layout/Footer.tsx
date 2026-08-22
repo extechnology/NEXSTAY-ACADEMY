@@ -11,7 +11,8 @@ import {
   GraduationCap,
   Users2,
   Globe,
-  Award
+  Award,
+  Clock
 } from 'lucide-react';
 import { navItems } from './Navbar';
 
@@ -55,11 +56,7 @@ const socialLinks = [
 ];
 
 const topProgramsList = [
-  'B.Sc in Hospitality & Hotel Admin',
-  'Diploma in Culinary Arts & Bakery',
-  'Executive Master\'s in Hotel Operations',
-  'Certified Mixology & Bar Management',
-  'Front Office & Guest Relations'
+  { label: 'Diploma in Hotel Management', href: '/programs' },
 ];
 
 export const Footer: React.FC = () => {
@@ -119,7 +116,7 @@ export const Footer: React.FC = () => {
             </Link>
 
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-sm">
-              Pioneering excellence in hospitality education, culinary arts, and luxury hotel leadership with 100% placement record worldwide.
+              Owned and operated by Nexstay Hotels &amp; Resorts, offering a comprehensive 15-month Diploma in Hotel Management with live on-the-job training, monthly stipends, and 100% placement.
             </p>
 
             {/* Certification Box */}
@@ -176,10 +173,10 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 3: Top Programs (3 cols) */}
+          {/* Column 3: Our Program (3 cols) */}
           <div className="lg:col-span-3 sm:pl-1">
             <h4 className="font-['Outfit'] text-sm font-bold text-white uppercase tracking-wider">
-              TOP PROGRAMS
+              OUR PROGRAM
             </h4>
             <div className="w-8 h-[2px] bg-[#c59b27] mt-1.5 mb-5 rounded-full" />
 
@@ -187,11 +184,11 @@ export const Footer: React.FC = () => {
               {topProgramsList.map((program, idx) => (
                 <li key={idx}>
                   <Link
-                    to="/programs"
+                    to={program.href}
                     className="group flex items-start gap-2 text-slate-300 hover:text-white transition-colors"
                   >
                     <span className="text-[#c59b27] font-bold text-xs mt-0.5">•</span>
-                    <span className="group-hover:text-[#e5be58] transition-colors leading-snug">{program}</span>
+                    <span className="group-hover:text-[#e5be58] transition-colors leading-snug">{program.label}</span>
                   </Link>
                 </li>
               ))}
@@ -209,7 +206,7 @@ export const Footer: React.FC = () => {
             <div className="flex items-start gap-3 text-xs text-slate-300">
               <MapPin className="w-4 h-4 text-[#e5be58] flex-shrink-0 mt-0.5" />
               <span className="leading-relaxed">
-                Nexstay Campus, Grand Boulevard,<br />Central Hospitality District
+                6th Floor, V-Zone Building,<br />Parayancheri, Calicut, Pin – 673016
               </span>
             </div>
 
@@ -217,11 +214,8 @@ export const Footer: React.FC = () => {
             <div className="flex items-start gap-3 text-xs text-slate-300">
               <Phone className="w-4 h-4 text-[#e5be58] flex-shrink-0 mt-0.5" />
               <div className="flex flex-col">
-                <a href="tel:+919876543210" className="hover:text-white transition-colors">
-                  +91 (0) 98765 43210
-                </a>
-                <a href="tel:+919876543211" className="hover:text-white transition-colors">
-                  +91 (0) 98765 43211
+                <a href="tel:+917736797333" className="hover:text-white transition-colors">
+                  +91 77367 97333
                 </a>
               </div>
             </div>
@@ -229,9 +223,18 @@ export const Footer: React.FC = () => {
             {/* Email */}
             <div className="flex items-center gap-3 text-xs text-slate-300">
               <Mail className="w-4 h-4 text-[#e5be58] flex-shrink-0" />
-              <a href="mailto:admissions@nexstayacademy.com" className="hover:text-white transition-colors break-all">
-                admissions@nexstayacademy.com
+              <a href="mailto:support@nahm.in" className="hover:text-white transition-colors break-all">
+                support@nahm.in
               </a>
+            </div>
+
+            {/* Office Hours */}
+            <div className="flex items-start gap-3 text-xs text-slate-300">
+              <Clock className="w-4 h-4 text-[#e5be58] flex-shrink-0 mt-0.5" />
+              <div className="leading-relaxed">
+                <span>Mon–Fri: 9:00 AM – 6:00 PM</span>
+                <span className="block">Sat: 9:00 AM – 3:00 PM</span>
+              </div>
             </div>
 
             {/* Apply Button Pill */}

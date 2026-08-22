@@ -127,7 +127,7 @@ export default function StudentRewardsBanner() {
 
                         <motion.a
                             variants={item}
-                            href="#"
+                            href="/earn-while-you-learn"
                             className="font-body group mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#C6A15B] px-5 py-3.5 text-sm font-semibold text-[#C6A15B] transition-colors duration-300 hover:bg-[#C6A15B] hover:text-[#071322] active:bg-[#C6A15B] active:text-[#071322] sm:mt-10 sm:w-fit sm:justify-start sm:py-3"
                         >
                             View month-by-month stipend table
