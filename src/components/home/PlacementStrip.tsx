@@ -1,6 +1,7 @@
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { Briefcase, Globe2, GraduationCap, ShieldCheck } from "lucide-react";
 import LogoLoop from "../LogoLoop";
+import type { LogoItem } from "../LogoLoop";
 
 /**
  * NOTE: This assumes `lucide-react` is already a project dependency
@@ -12,30 +13,32 @@ const IMAGE_URL =
     "https://plus.unsplash.com/premium_photo-1713296255442-e9338f42aad8?fm=jpg&q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dW5pdmVyc2l0eSUyMHN0dWRlbnR8ZW58MHx8MHx8fDA%3D";
 
 /* =========================================================
-   HIRING PARTNERS
-   Replace these dummy image URLs with real logo URLs later.
+   HIRING PARTNERS — real logos via Clearbit Logo API
 ========================================================= */
 
-const PARTNERS = [
-    { title: "Taj", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCfCi3t_7AIllxaLn3mhgRYvKsEpQOhgTv92fdCun0tUshf7ynNc1hUOg&s=10" },
-    { title: "Marriott", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCfCi3t_7AIllxaLn3mhgRYvKsEpQOhgTv92fdCun0tUshf7ynNc1hUOg&s=10" },
-    { title: "Hilton", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCfCi3t_7AIllxaLn3mhgRYvKsEpQOhgTv92fdCun0tUshf7ynNc1hUOg&s=10" },
-    { title: "Hyatt", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCfCi3t_7AIllxaLn3mhgRYvKsEpQOhgTv92fdCun0tUshf7ynNc1hUOg&s=10" },
-    { title: "Accor", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCfCi3t_7AIllxaLn3mhgRYvKsEpQOhgTv92fdCun0tUshf7ynNc1hUOg&s=10" },
-    { title: "Oberoi", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCfCi3t_7AIllxaLn3mhgRYvKsEpQOhgTv92fdCun0tUshf7ynNc1hUOg&s=10" },
-    { title: "Radisson", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCfCi3t_7AIllxaLn3mhgRYvKsEpQOhgTv92fdCun0tUshf7ynNc1hUOg&s=10" },
-    { title: "ITC Hotels", src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRCfCi3t_7AIllxaLn3mhgRYvKsEpQOhgTv92fdCun0tUshf7ynNc1hUOg&s=10" },
+const PARTNERS: LogoItem[] = [
+    { title: 'Taj Hotels',   src: 'https://images.examples.com/wp-content/uploads/2017/03/business-Logo.jpg',       alt: 'Taj Hotels' },
+    { title: 'Marriott',     src: 'https://images.examples.com/wp-content/uploads/2017/03/business-Logo.jpg',        alt: 'Marriott' },
+    { title: 'Hilton',       src: 'https://images.examples.com/wp-content/uploads/2017/03/business-Logo.jpg',          alt: 'Hilton' },
+    { title: 'Hyatt',        src: 'https://images.examples.com/wp-content/uploads/2017/03/business-Logo.jpg',           alt: 'Hyatt' },
+    { title: 'Accor',        src: 'https://images.examples.com/wp-content/uploads/2017/03/business-Logo.jpg',           alt: 'Accor' },
+    { title: 'The Oberoi',   src: 'https://images.examples.com/wp-content/uploads/2017/03/business-Logo.jpg',    alt: 'The Oberoi' },
+    { title: 'Radisson',     src: 'https://images.examples.com/wp-content/uploads/2017/03/business-Logo.jpg', alt: 'Radisson' },
+    { title: 'ITC Hotels',   src: 'https://images.examples.com/wp-content/uploads/2017/03/business-Logo.jpg',      alt: 'ITC Hotels' },
+    { title: 'Novotel',      src: 'https://images.examples.com/wp-content/uploads/2017/03/business-Logo.jpg',        alt: 'Novotel' },
+    { title: 'Lemon Tree',   src: 'https://images.examples.com/wp-content/uploads/2017/03/business-Logo.jpg', alt: 'Lemon Tree' },
 ];
 
 /* =========================================================
    ACCREDITATIONS
 ========================================================= */
 
-const ACCREDITATIONS = [
-    { title: "Accreditation 01", src: "https://affiliatewp.com/wp-content/uploads/2023/10/affiliatewp-featured-image-1.png" },
-    { title: "Accreditation 02", src: "https://affiliatewp.com/wp-content/uploads/2023/10/affiliatewp-featured-image-1.png" },
-    { title: "Accreditation 03", src: "https://affiliatewp.com/wp-content/uploads/2023/10/affiliatewp-featured-image-1.png" },
-    { title: "Accreditation 04", src: "https://affiliatewp.com/wp-content/uploads/2023/10/affiliatewp-featured-image-1.png" },
+const ACCREDITATIONS: LogoItem[] = [
+    { title: 'Crowne Plaza',  src: 'https://1000logos.net/wp-content/uploads/2022/11/IGNOU-Logo.png',  alt: 'Crowne Plaza' },
+    { title: 'Holiday Inn',   src: 'https://1000logos.net/wp-content/uploads/2022/11/IGNOU-Logo.png',   alt: 'Holiday Inn' },
+    { title: 'Sheraton',      src: 'https://1000logos.net/wp-content/uploads/2022/11/IGNOU-Logo.png',     alt: 'Sheraton' },
+    { title: 'Four Seasons',  src: 'https://1000logos.net/wp-content/uploads/2022/11/IGNOU-Logo.png', alt: 'Four Seasons' },
+    { title: 'Wyndham',       src: 'https://1000logos.net/wp-content/uploads/2022/11/IGNOU-Logo.png',      alt: 'Wyndham' },
 ];
 
 /* =========================================================

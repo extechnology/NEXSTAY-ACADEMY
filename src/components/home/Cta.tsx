@@ -111,9 +111,9 @@ export default function CTASection() {
                         variants={riseVariants}
                         className="cta-text-shadow font-display text-[2rem] sm:text-[2.75rem] md:text-[3.3rem] lg:text-[3.6rem] font-medium leading-[1.15] tracking-[-0.015em] text-white"
                     >
-                        Begin Your Journey to a{" "}
+                        Your Career in Hospitality{" "}
                         <br className="hidden sm:inline" />
-                        <span className="text-[#D8B56F]">World-Class</span> Hospitality Career.
+                        <span className="text-[#D8B56F]">Starts Here.</span>
                     </motion.h2>
 
                     {/* Subtle underline accent */}
@@ -127,9 +127,9 @@ export default function CTASection() {
                         variants={riseVariants}
                         className="font-body mt-5 max-w-2xl text-[14px] leading-relaxed text-white/85 sm:text-[16px] md:text-[17px]"
                     >
-                        Gain practical hotel experience, earn monthly stipends,
+                        Apply now and gain access to NAHM's 100% placement support, a monthly stipend
                         <br className="hidden sm:inline" />
-                        {" "}and secure 100% placement with India and international hotel chains.
+                        {" "}during training, and a direct pipeline to Nexstay Hotels &amp; Resorts and 50+ partner properties.
                     </motion.p>
 
                     {/* ================= 3 CIRCULAR PERK PILLARS ================= */}
@@ -175,7 +175,7 @@ export default function CTASection() {
                     >
                         {/* Primary Gold Button */}
                         <Link
-                            to="/admissions"
+                            to="/admission"
                             className="group inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-[#C6A15B] px-8 py-3.5 font-body text-[13.5px] sm:text-sm font-semibold text-[#071322] shadow-[0_8px_30px_rgba(198,161,91,0.4)] transition-all duration-300 hover:bg-[#d8b56f] hover:shadow-[0_10px_38px_rgba(198,161,91,0.6)] hover:-translate-y-0.5 active:translate-y-0"
                         >
                             <span>Apply For Admission</span>
@@ -184,7 +184,7 @@ export default function CTASection() {
 
                         {/* Secondary WhatsApp Button */}
                         <a
-                            href="https://wa.me/919876543210?text=Hi%20Nexstay%20Academy,%20I%20would%20like%20to%20know%20more%20about%20admissions."
+                            href="https://wa.me/917736797333?text=Hi%20Nexstay%20Academy,%20I%20would%20like%20to%20know%20more%20about%20admissions."
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-full border border-white/25 bg-white/[0.06] px-7 py-3.5 font-body text-[13.5px] sm:text-sm font-medium text-white backdrop-blur-md transition-all duration-300 hover:border-white/45 hover:bg-white/[0.1] hover:-translate-y-0.5 active:translate-y-0"

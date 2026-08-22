@@ -191,8 +191,8 @@ export const Navbar: React.FC = () => {
 
               <div className="px-6 py-6 border-t border-white/10 text-[11px] text-white/40 space-y-1">
                 <div className="text-white/60 font-semibold uppercase tracking-wider text-xs">Nexstay Academy</div>
-                <div>Grand Boulevard, Luxury Hospitality District</div>
-                <div>+91 (0) 98765 43210</div>
+                <div>6th Floor, V-Zone Building, Parayancheri, Calicut</div>
+                <div>+91 77367 97333</div>
               </div>
             </motion.div>
           </>
