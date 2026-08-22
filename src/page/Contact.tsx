@@ -12,8 +12,6 @@ import {
   MessageSquare,
   Building,
   ExternalLink,
-  ShieldCheck,
-  Compass,
   ChevronDown,
   Check,
   CalendarCheck,
